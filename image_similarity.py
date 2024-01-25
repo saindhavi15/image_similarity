@@ -1,5 +1,4 @@
 import cv2
-imp
 def orb_sim(image1, image2):
     orb = cv2.ORB_create()
     try:
@@ -20,3 +19,8 @@ def orb_sim(image1, image2):
     if(len(matches)) == 0:
         return 0
     return len(similar_regions) / len(matches)
+img1 = cv2.imread("1.png")
+img2 = cv2.imread("2.png")
+similarity_ratio = orb_sim(img1, img2)
+
+print("Similarity Ratio is: ", similarity_ratio)
